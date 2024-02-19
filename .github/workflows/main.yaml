@@ -10,27 +10,27 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions@checkout@v4
-      - uses: falti/dotenv-action@v1
-      - uses: actions/setup-java@v4
-        with:
-          java-version: 17
-          distribution: temurin
-      - uses: android-actions/setup-android@v3
-        with:
-          cmdline-tools-version: 11076708
-          log-accepted-android-sdk-licenses: false
-      - run: sdkmanager --install "ndk;${{ steps.dotenv.outputs.ffmpeg_android_ndk_version }}"
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 8
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 21
-          cache: pnpm
-      - run: pnpm install
-      - run: pnpm run build
-      - run: find dist/ -printf "%P\n" | tar -czf release.tar.gz --no-recursion -C dist/ -T -
-      - uses: actions/upload-artifact@v4
-        with:
-          name: release
-          path: release.tar.gz
+      # - uses: falti/dotenv-action@v1
+      # - uses: actions/setup-java@v4
+      #   with:
+      #     java-version: 17
+      #     distribution: temurin
+      # - uses: android-actions/setup-android@v3
+      #   with:
+      #     cmdline-tools-version: 11076708
+      #     log-accepted-android-sdk-licenses: false
+      # - run: sdkmanager --install "ndk;${{ steps.dotenv.outputs.ffmpeg_android_ndk_version }}"
+      # - uses: pnpm/action-setup@v3
+      #   with:
+      #     version: 8
+      # - uses: actions/setup-node@v4
+      #   with:
+      #     node-version: 21
+      #     cache: pnpm
+      # - run: pnpm install
+      # - run: pnpm run build
+      # - run: find dist/ -printf "%P\n" | tar -czf release.tar.gz --no-recursion -C dist/ -T -
+      # - uses: actions/upload-artifact@v4
+      #   with:
+      #     name: release
+      #     path: release.tar.gz
