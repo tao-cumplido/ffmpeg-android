@@ -1,0 +1,18 @@
+{
+	"name": "ffmpeg-android",
+	"version": "6.1.1",
+	"type": "module",
+	"scripts": {
+		"build": "tsx build.ts"
+	},
+	"dependencies": {
+		"ffmpeg": "github:FFmpeg/FFmpeg#n6.1.1"
+	},
+	"devDependencies": {
+		"@types/node": "20.11.19",
+		"dotenv": "16.4.4",
+		"execa": "8.0.1",
+		"typescript": "5.3.3",
+		"tsx": "4.7.1"
+	}
+}
