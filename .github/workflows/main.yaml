@@ -43,7 +43,7 @@ jobs:
       contents: write
     steps:
       - uses: actions/download-artifact@v4
-      - run: ls -R
       - uses: ncipollo/release-action@v1
         with:
           artifacts: release/release.tar.gz
+          omitBody: true
