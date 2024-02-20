@@ -50,7 +50,7 @@ try {
 await fs.mkdir(outDir);
 
 for (const target of targets) {
-	const destination = path.join(outDir, target.abi);
+	const destination = path.join(outDir, env.sdkPlatform, target.abi);
 
 	console.log(`Configure and build target '${target.abi}'`);
 
